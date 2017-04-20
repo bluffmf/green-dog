@@ -1,0 +1,19 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "serve": "node start.js",
+    "start": "npm run serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^3.4.0",
+    "express": "^4.15.2",
+    "sendevent": "^1.0.4",
+    "watch": "^1.0.2",
+    "watch-run": "^1.2.5"
+  }
+}

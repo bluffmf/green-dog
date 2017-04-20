@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="app/style.css">
+	<script type="text/javascript" src="app/script.js"></script>
+</head>
+<body>
+
+	<h1><img src="app/img/logo.gif" width="150" height="150" />Сайт на Node.js</h1>
+	<div class="main_menu">
+		<p><a href="cats.html">Кошечки</a></p>
+	</div>
+	<img src="app/img/my_large_photo.jpeg" />
+
+	<div>CKEditor</div>
+	<p>Hello</p>
+	<p>Restart77777777777778888999955999</p>
+	<p>Restart 2</p>
+	<p>Restart 3</p>
+	
+
+
+	
+
+
+
+	<script>	
+		document.addEventListener("DOMContentLoaded", function() {			
+			console.log('Do subscribe to /eventstream');
+
+			(function() {
+				function subscribe(url, callback) {
+					var source = new window.EventSource(url);
+
+					source.onmessage = function(e) {
+						callback(e.data);
+					};
+
+					source.onerror = function(e) {
+						if (source.readyState == window.EventSource.CLOSED) return;
+
+						console.log('sse error', e);
+					};
+
+					return source.close.bind(source);
+				};
+
+				subscribe('/eventstream', function(data) {
+					if (data && /reload/.test(data)) {
+						window.location.reload();
+					}
+				});
+			}());
+
+		});
+	</script>
+
+	
+
+</body>
+</html>
